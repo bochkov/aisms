@@ -1,0 +1,36 @@
+{% extends 'aisms/base.html' %}
+
+{% block content %}
+    {% if measure %}
+        <h3>{{ measure }}</h3>
+        {% if measure.image %}
+            <a target='_blank' href='{{ measure.image.url }}'>
+                <img src='{{ measure.image.url }}' height='100'/>
+            </a><br/>
+        {% endif %}
+        <b>Наименование:</b> {{ measure.name }}<br/>
+        <b>Тип:</b> {{ measure.type }}<br/>
+        <b>Область измерений:</b> {{ measure.area }}<br/>
+        <b>Характеристики:</b><br/>
+        <textarea wrap='virtual' rows='8' cols='30' readonly>{{ measure.features }}</textarea><br/>
+        <b>Межповерочный интервал:</b> {{ measure.interval }}<br/>
+        <b>Нормативные документы:</b>
+        {% if measure.documents.all %}
+            {% for i in measure.documents.all %}
+                <br/>{{ i.code }} {{ i.name }}
+            {% endfor %}
+        {% else %}
+            Пока нет
+        {% endif %}
+        <p>
+            <a href='javascript:history.back()'>&larr; Назад</a>
+            {% else %}
+        <form action='' method='POST'>{% csrf_token %}
+            <input type='text' name='q' value='{{ query|escape }}'/>
+            <input type='submit' value='Поиск'/>
+        </form>
+        {% for m in measure_list %}
+            <a href='/report/measure/{{ m.id }}/'>{{ m }}</a><br/>
+        {% endfor %}
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'aisms/base.html' %}
+
+{% block title %}Непредставленные СИ{% endblock %}
+
+{% block content %}
+    <h3>Непредставленные СИ</h3>
+    {% if results %}
+        Всего непредставлено: {{ results|length }}
+        <table>
+            <tr>
+                <th>№ п/п</th>
+                <th>Подразделение</th>
+                <th>Средство измерений</th>
+                <th>Просроченных дней</th>
+            </tr>
+            {% for i in results %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ i.department }}</td>
+                    <td>{{ i.measure.name }} {{ i }}</td>
+                    <td>{{ i.loose }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+{% endblock %}

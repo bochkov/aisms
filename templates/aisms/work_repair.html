@@ -1,0 +1,43 @@
+{% extends 'aisms/base.html' %}
+
+{% block title %}Ремонт{% endblock %}
+
+{% block content %}
+    <table>
+        <tr>
+            <th>Дата поступления</th>
+            <th>Средство измерений</th>
+            <th>Подразделение</th>
+            <th>Причина</th>
+            <th>Ремонтник</th>
+            <th>Результат</th>
+            <th>Дата ремонта</th>
+            <th>Примечание</th>
+            <th></th>
+        </tr>
+        {% for r in records %}
+            <tr>
+                <form action='' method='POST'>{% csrf_token %}
+                    <input type='hidden' value='{{ r.id }}' name='id'/>
+                    <td>{{ r.in_date|date:"j.m.Y" }}</td>
+                    <td>{{ r.passport }}</td>
+                    <td>{{ r.passport.department }}</td>
+                    <td>{{ r.reason }}</td>
+                    <td><select name='repairmen'>
+                        <option value='None'></option>
+                        {% for i in repairmen %}
+                            <option value='{{ i.id }}'>{{ i }}</option>
+                        {% endfor %}
+                    </select></td>
+                    <td><select name='result'>
+                        <option value='None'></option>
+                        <option value='True'>В поверку</option>
+                        <option value='False'>На списание</option>
+                    </select></td>
+                    <td><input type='text' name='out_date'/></td>
+                    <td><input type='text' name='notes'/></td>
+                    <td><input type='submit' value='Сохранить'/></td>
+                </form></tr>
+        {% endfor %}
+    </table>
+{% endblock %}

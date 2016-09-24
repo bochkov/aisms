@@ -1,0 +1,52 @@
+{% extends 'aisms/base.html' %}
+
+{% block title %}
+    {% ifequal work 'verification' %}Поверки{% endifequal %}
+    {% ifequal work 'repair' %}Ремонты{% endifequal %}
+    за период
+{% endblock %}
+
+{% block content %}
+    <h3>
+        {% ifequal work 'verification' %}Поверки{% endifequal %}
+        {% ifequal work 'repair' %}Ремонты{% endifequal %}
+    </h3>
+
+    <form action='' method='POST'>{% csrf_token %}
+        <table>{{ form }}</table>
+        <input type='submit' value='Показать'/>
+    </form>
+    {% if result %}
+        <table class='journal'>
+            <tr>
+                <th>№ п/п</th>
+                <th>Дата поверки</th>
+                <th>Средство измерений</th>
+                <th>Подразделение</th>
+                <th>Результат</th>
+                <th>Примечание</th>
+                {% for i in result %}
+                    <tr>
+                        {% ifequal work 'verification' %}
+                            <td>{{ forloop.counter }}</td>
+                            <td>{{ i.out_date|date:"j.m.Y" }}</td>
+                            <td>{{ i.passport }}</td>
+                            <td>{{ i.passport.department }}</td>
+                            <td>{{ i.result|yesno:"Годен,Брак" }}</td>
+                            <td>{{ i.notes }}</td>
+                        {% endifequal %}
+
+                        {% ifequal work 'repair' %}
+                            <td>{{ forloop.counter }}</td>
+                            <td>{{ i.out_date|date:"j.m.Y" }}</td>
+                            <td>{{ i.measure }}</td>
+                            <td>{{ i.department }}</td>
+                            <td>{{ i.result|yesno:"Годен,Брак" }}</td>
+                            <td>{{ i.notes }}</td>
+                        {% endifequal %}
+                    </tr>
+                {% endfor %}
+        </table>
+    {% endif %}
+    <p><b>Всего: {{ result|length }}</b>
+{% endblock %}

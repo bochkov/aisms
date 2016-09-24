@@ -1,0 +1,76 @@
+.jqueryslidemenu {
+    font: bold 12px Verdana;
+    background: white;
+    margin: 0 auto;
+}
+
+.jqueryslidemenu ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.jqueryslidemenu ul li {
+    position: relative;
+    display: inline;
+    float: left;
+}
+
+.jqueryslidemenu ul li a {
+    display: block;
+    background: #EEE;
+    padding: 8px 10px;
+    border: 1px solid #778;
+    color: #414141;
+    text-decoration: none;
+}
+
+* html .jqueryslidemenu ul li a {
+    display: inline-block;
+}
+
+.jqueryslidemenu ul li a:link, .jqueryslidemenu ul li a:visited {
+    color: #414141;
+}
+
+.jqueryslidemenu ul li a:hover {
+    background: #414141;
+    color: #EEE;
+}
+
+.jqueryslidemenu ul li ul {
+    position: absolute;
+    left: 0;
+    display: block;
+    visibility: hidden;
+}
+
+.jqueryslidemenu ul li ul li {
+    display: list-item;
+    float: none;
+}
+
+.jqueryslidemenu ul li ul li ul {
+    top: 0;
+}
+
+.jqueryslidemenu ul li ul li a {
+    font: normal 12px Verdana;
+    width: 160px;
+    padding: 5px;
+    margin: 0;
+    border-top-width: 0;
+    border-bottom: 1px solid gray;
+}
+
+.downarrowclass {
+    position: absolute;
+    top: 12px;
+    right: 7px;
+}
+
+.rightarrowclass {
+    position: absolute;
+    top: 6px;
+    right: 5px;
+}

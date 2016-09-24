@@ -1,0 +1,23 @@
+{% extends 'aisms/base.html' %}
+
+{% block title %}Вход{% endblock %}
+
+{% block content %}
+    {% if form.errors %}
+        <ul class='errorlist'>
+            <li>Ошибка входа</li>
+        </ul>
+    {% endif %}
+    <form action='' method='POST'>{% csrf_token %}
+        <label for='username'>Имя пользователя</label>
+        <input type='text' name='username' value='' id='username'/>
+        <label for='password'>Пароль</label>
+        <input type='password' name='password' value='' id='password'>
+        <input type='submit' value='Вход'/>
+        {% if next %}
+            <input type='hidden' name='next' value='{{ next|escape }}'/>
+        {% else %}
+            <input type='hidden' name='next' value='/'/>
+        {% endif %}
+    </form>
+{% endblock %}

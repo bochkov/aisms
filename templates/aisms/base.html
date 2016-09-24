@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Главная{% endblock %}</title>
+    <link rel='stylesheet' type='text/css' href='{{ MEDIA_URL }}style.css'/>
+    <link rel='stylesheet' type='text/css' href='{{ MEDIA_URL }}slidemenu.css'/>
+    <script type='text/javascript' src='{{ MEDIA_URL }}jquery-1.6.1.min.js'></script>
+    <script type='text/javascript' src='{{ MEDIA_URL }}script.js'></script>
+    <meta http-equiv='ContentType;charset=utf-8'/>
+</head>
+
+<script>jqueryslidemenu.buildmenu("slidemenu", arrowimages, 1)</script>
+
+<body>
+<div class='header'></div>
+
+<div class='jqueryslidemenu' id='slidemenu'>{% include 'aisms/menu.html' %}
+    <br style='clear: left'/>
+</div>
+
+<div class='content'>
+    {% block content %}<h3>Тестовый пользователь: tmp:123</h3>{% endblock %}
+</div>
+
+<div class="footer">
+    <script type='text/javascript'>copyright()</script>
+</div>
+
+</body>
+</html>

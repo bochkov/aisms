@@ -1,0 +1,24 @@
+{% extends 'aisms/base.html' %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+    {% if measures %}
+        <h3>Средства измерений в {{ department.name }} ({{ department.code }})</h3>
+        <table>
+            {% for i in measures %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>
+                        <a href='/report/passport/{{ i.id }}/'>
+                            {{ i.measure.name }} {{ i.measure.type }} №{{ i.number }}</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        {% for i in deps %}
+            <a href='/report/department/{{ i.id }}/'>{{ i.code }} {{ i.name }}</a><br/>
+        {% endfor %}
+    {% endif %}
+{% endblock %}

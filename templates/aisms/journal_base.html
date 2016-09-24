@@ -1,0 +1,9 @@
+{% extends 'aisms/base.html' %}
+
+{% block title %}Журнал{% endblock %}
+
+{% block content %}
+    {% for object in object_list %}
+        {{ object }}
+    {% endfor %}
+{% endblock %}

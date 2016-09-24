@@ -1,0 +1,43 @@
+{% extends 'aisms/base.html' %}
+
+{% block title %}Графики поверки{% endblock %}
+
+{% block content %}
+    <form action='' method='POST'>{% csrf_token %}
+        <select name='organization'>
+            <option></option>
+            {% for i in organization %}
+                <option value='{{ i.id }}'>{{ i }}</option>
+            {% endfor %}
+        </select>
+        <input type='submit' value='Сгенерировать'/>
+    </form>
+
+    {% if result|length %}
+        <table class='journal'>
+            <tr>
+                <th>№ п/п</th>
+                <th>Наименование, тип</th>
+                <th>Зав.номер</th>
+                <th>Область измерений</th>
+                <th>Подразделение</th>
+                <th>Межповерочный интервал</th>
+                <th>Дата последней поверки</th>
+                <th>Дата следующей поверки</th>
+            </tr>
+            {% for p in result %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ p.measure }}</td>
+                    <td>{{ p.number }}</td>
+                    <td>{{ p.measure.area }}</td>
+                    <td>{{ p.department }}</td>
+                    <td>{{ p.measure.interval }}</td>
+                    <td>{{ p.date|date:"j.m.Y" }}</td>
+                    <td>{{ p.next_date|date:"F Y" }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+
+{% endblock %}

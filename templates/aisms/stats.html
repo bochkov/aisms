@@ -1,0 +1,40 @@
+﻿{% extends 'aisms/base.html' %}
+
+{% block title %}Статистика{% endblock %}
+
+{% block content %}
+    <b>Всего средств измерений:</b> {{ count_all }}<br/>
+    <b>Всего в использовании:</b> {{ count_work }}<br/>
+    <b>Всего на хранении:</b> {{ count_not_in_use }}<br/>
+    <b>На данный момент находятся в отделе:</b> {{ count_in_metr }}<br/>
+
+    <p>
+        <b>Возраст средств измерений:</b>
+    <table>
+        <tr>
+            <th>Год выпуска</th>
+            <th>Количество</th>
+        </tr>
+        {% for row in by_years %}
+            <tr>
+                {% for col in row %}
+                    <td>{{ col }}</td>{% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+
+    <p>
+        <b>Количество средств измерений по подразделениям:</b>
+    <table>
+        <tr>
+            <th>Подразделение</th>
+            <th>Количество</th>
+        </tr>
+        {% for row in by_deps %}
+            <tr>
+                {% for col in row %}
+                    <td>{{ col }}</td>{% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

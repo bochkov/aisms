@@ -1,0 +1,52 @@
+<ul>
+    {% if user.is_authenticated %}
+        <li><a href='#'>Добавить</a>
+            <ul>
+                <li><a href='/add/measure/'>Добавить СИ</a></li>
+                <li><a href='/add/passport/'>Заполнить паспорт</a></li>
+                <li><a href='/add/people/'>Добавить сотрудника</a></li>
+            </ul>
+        </li>
+        <li><a href='#'>Работы</a>
+            <ul>
+                <li><a href='/work/reception/'>Прием СИ</a></li>
+                <li><a href='/work/issue/'>Выдача СИ</a></li>
+                <li><a href='/work/verification/'>Поверка</a></li>
+                <li><a href='/work/repair/'>Ремонт</a></li>
+            </ul>
+        </li>
+        <li><a href='#'>Просмотр</a>
+            <ul>
+                <li><a href='/journal/reception/'>Журнал приемки</a></li>
+                <li><a href='/journal/verification/'>Журнал поверок</a></li>
+                <li><a href='/journal/repair/'>Журнал ремонта</a></li>
+                <li><a href='/journal/reception/archive/'>Архив журнала приемки</a></li>
+                <li><a href='/journal/verification/archive/'>Архив журнала поверок</a></li>
+                <li><a href='/journal/repair/archive/'>Архив журнала ремонта</a></li>
+            </ul>
+        </li>
+        <li><a href='/stats'>Статистика</a></li>
+    {% endif %}
+    <li><a href='#'>Отчеты</a>
+        <ul>
+            <li><a href='/report/measure/'>Средства измерений</a></li>
+            <li><a href='/report/department/'>СИ по подразделениям</a></li>
+            <li><a href='/report/done/'>Готовность СИ</a></li>
+            <li><a href='/report/debt/'>Непредставленные СИ</a></li>
+            {% if user.is_authenticated %}
+                <li><a href='/report/period/verification/'>Поверки за период</a></li>
+                <li><a href='/report/period/repair/'>Ремонты за период</a></li>
+                <li><a href='/report/plan/'>Составление графиков поверки</a></li>
+            {% endif %}
+        </ul>
+    </li>
+    <li>{% if user.is_authenticated %}<a href='#'>{{ user }}</a>
+        <ul>
+            <li><a href='/admin/'>Администрирование</a></li>
+            <li><a href='/accounts/logout/'>Выход</a></li>
+        </ul>
+    {% else %}
+        <a href='/accounts/login/'>Вход</a>
+    {% endif %}
+    </li>
+</ul>

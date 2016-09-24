@@ -1,0 +1,83 @@
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: #333;
+}
+
+body {
+    font-family: Helvetica, Verdana, Tahoma, sans;
+    font-size: 10pt;
+    margin-left: 2%;
+    margin-right: 2%;
+    padding: 0 20px;
+    height: 100%;
+    background: #FFF;
+    border-radius: 10px;
+}
+
+table {
+    font-size: 9pt;
+}
+
+form table th, form table td {
+    border: 0;
+}
+
+table th, table td {
+    border: 1px solid black;
+    padding: 5px 10px;
+}
+
+a {
+    text-decoration: none;
+    color: navy;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a img {
+    border: none;
+}
+
+div {
+    padding: 10px;
+}
+
+input, select {
+    font-size: 9pt;
+}
+
+.header {
+}
+
+.jqueryslidemenu {
+}
+
+.content {
+    border-radius: 5px;
+    border: 1px solid #414141;
+}
+
+.footer {
+    text-align: center;
+    clear: both;
+    padding-bottom: 1em;
+    font-size: 8pt;
+}
+
+ul.errorlist {
+    margin: 0;
+    padding: 0;
+}
+
+.errorlist li {
+    background-color: red;
+    color: white;
+    display: block;
+    font-size: 10px;
+    margin: 0 0 3px;
+    padding: 4px 5px;
+}

@@ -1,0 +1,46 @@
+{% extends 'aisms/base.html' %}
+
+{% block title %}Поверка{% endblock %}
+
+{% block content %}
+    <table>
+        <tr>
+            <th>Дата поступления</th>
+            <th>Средство измерений</th>
+            <th>Вид работ</th>
+            <th>Поверитель</th>
+            <th>Результат</th>
+            <th>Дата поверки</th>
+            <th>Примечание</th>
+            <th></th>
+        </tr>
+        {% for r in records %}
+            <tr>
+                <form method='POST' action=''>{% csrf_token %}
+                    <input type='hidden' name='id' value='{{ r.id }}'/>
+                    <td>{{ r.in_date|date:"j.m.Y" }}</td>
+                    <td>{{ r.passport }}</td>
+                    <td><select name='worktype'>
+                        <option value='None'></option>
+                        {% for i in worktypes %}
+                            <option value='{{ i }}'>{{ i }}</option>
+                        {% endfor %}
+                    </td>
+                    <td><select name='verificator'>
+                        <option value='None'></option>
+                        {% for v in verificators %}
+                            <option value='{{ v.id }}'>{{ v }}</option>
+                        {% endfor %}
+                    </select></td>
+                    <td><select name='result'>
+                        <option value='None'></option>
+                        <option value='True'>Годен</option>
+                        <option value='False'>Брак</option>
+                    </select></td>
+                    <td><input type='text' name='out_date'/></td>
+                    <td><input type='text' name='notes'/></td>
+                    <td><input type='submit' value='Записать'/></td>
+                </form></tr>
+        {% endfor %}
+    </table>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'aisms/base.html' %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+    <h3>{{ passport.measure.name }} {{ passport.measure.type }} № {{ passport.number }}</h3>
+    Поразделение: {{ passport.department }}<br/>
+    Год выпуска: {{ passport.year }}<br/>
+    Изготовитель: {{ passport.manufacturer }}<br/>
+    Текущий статус: {{ passport.status }}<br/>
+    <table>
+        <tr>
+            <th>Дата</th>
+            <th>Работа</th>
+            <th>Результат</th>
+            <th>Исполнитель</th>
+        </tr>
+        {% for i in works %}
+            <tr>
+                <td>{{ i.date|date:"j.m.Y" }}</td>
+                <td>{{ i.worktype }}</td>
+                <td>{{ i.result|yesno:"Годен,Брак" }}</td>
+                <td>{{ i.performer }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

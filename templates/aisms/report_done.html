@@ -1,0 +1,23 @@
+{% extends 'aisms/base.html' %}
+
+{% block title %}Готовность СИ{% endblock %}
+
+{% block content %}
+    <h3>Готовность СИ</h3>
+    <table class='journal'>
+        <tr>
+            <th>№ п/п</th>
+            <th>Дата сдачи</th>
+            <th>Средство измерений</th>
+            <th>Поразделение</th>
+        </tr>
+        {% for i in results %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ i.in_date|date:"j.m.Y" }}</td>
+                <td>{{ i.passport }}</td>
+                <td>{{ i.passport.department }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

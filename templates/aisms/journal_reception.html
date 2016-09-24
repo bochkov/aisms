@@ -1,0 +1,38 @@
+﻿{% extends 'aisms/base.html' %}
+
+{% block title %}Журнал приемки{% endblock %}
+
+{% block content %}
+    <h3>Журнал приемки</h3>
+    Всего: {{ object_list|length }}
+    {% if object_list|length %}
+        <table class='journal'>
+            <tr>
+                <th>Дата приема</th>
+                <th>Средство измерений</th>
+                <th>Подразделение</th>
+                <th>Сдал</th>
+                <th>Принял</th>
+                <th>Дата выдачи</th>
+                <th>Выдал</th>
+                <th>Получил</th>
+                <th>Примечание</th>
+            </tr>
+            {% for i in object_list %}
+                <tr>
+                    <td>{{ i.in_date|date:"j.m.Y" }}</td>
+                    <td><a href='report/passport/{{ i.passport.id }}/'>{{ i.passport }}</a></td>
+                    <td>{{ i.passport.department }}</td>
+                    <td>{{ i.in_pass }}</td>
+                    <td>{{ i.in_took }}</td>
+                    <td>{% if i.out_date %}{{ i.out_date|date:"j.m.Y" }}{% endif %}</td>
+                    <td>{% if i.out_pass %}{{ i.out_pass }}{% endif %}</td>
+                    <td>{% if i.out_took %}{{ i.out_took }}{% endif %}</td>
+                    <td>{% if i.notes %}{{ i.notes }}{% endif %}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        Ничего нет
+    {% endif %}
+{% endblock %}

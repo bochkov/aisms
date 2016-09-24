@@ -1,0 +1,31 @@
+{% extends 'aisms/base.html' %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+    <table>
+        <tr>
+            <th>Средство измерений</th>
+            <th>Подразделение</th>
+            <th>Дата выдачи</th>
+            <th>Выдал</th>
+            <th>Получил</th>
+            <th>Примечание</th>
+            <th></th>
+        </tr>
+        {% for r in records %}
+            <tr>
+                <form action='' method='POST'>{% csrf_token %}
+                    <input type='hidden' value='{{ r.id }}' name='id'/>
+                    <td>{{ r.passport }}</td>
+                    <td>{{ r.passport.department }}</td>
+                    <td><input type='text' name='out_date'/></td>
+                    <td><input type='text' name='out_pass'/></td>
+                    <td><input type='text' name='out_took'/></td>
+                    <td><input type='text' name='notes'/></td>
+                    <td><input type='submit' value='Выдать'/></td>
+                </form>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
