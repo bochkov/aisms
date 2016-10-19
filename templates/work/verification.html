@@ -1,0 +1,24 @@
+{% extends 'work/_session_form.html' %}
+
+{% block buttons %}
+    <button type="submit" class="btn btn-primary" id="sub_button"></button>
+{% endblock %}
+
+{% block custom_js %}
+    <script>
+        function change_button(checked){
+            var button = $("#sub_button");
+            if (checked)
+                button.html("Оформить <i class=\"icon-arrow-right icon-white\"></i>");
+            else
+                button.html("Закончить <i class=\"icon-ok icon-white\"></i>");
+        }
+
+        $(function(){
+            change_button(true);
+            $("#id_verification-create_doc").click(function(){
+                change_button($(this).is(":checked"));
+            });
+        });
+    </script>
+{% endblock %}

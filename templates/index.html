@@ -1,0 +1,23 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block content %}
+    {% if not user.is_authenticated %}
+    <div class="hero-unit text-center">
+    <h1>АИС МС</h1>
+    <img src="{% static 'img/aisms.png' %}"/>
+    <p>
+        Автоматизированная информационная система метрологической службы промышленного предприятия.
+        <br/>Тестовый пользователь &ndash; tmp:123
+    </p>
+    <p><a href="{% url 'login' %}" class="btn btn-success btn-primary">Начать пользоваться</a></p>
+    </div>
+    {% else %}
+        <ul class="unstyled">
+            <li>Всего типов средств измерений: <strong>{{ measure_num }}</strong></li>
+            <li>Всего средств измерений: <strong>{{ passport_num }}</strong></li>
+            <li>Средств измерений в поверке: <strong>{{ passport_num_verif }}</strong></li>
+            <li>Средств измерений в ремонте: <strong>{{ passport_num_repair }}</strong></li>
+        </ul>
+    {% endif %}
+{% endblock %}

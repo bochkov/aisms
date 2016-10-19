@@ -1,0 +1,565 @@
+[
+    {
+        "pk": 1,
+        "model": "aisms.passport",
+        "fields": {
+            "measure": 1,
+            "number": "5532",
+            "organization": 1,
+            "department": 1,
+            "interval": 36,
+            "manufacturer": "",
+            "manufacture_date": "1982-10-10",
+            "status": 1,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "aisms.passport",
+        "fields": {
+            "measure": 1,
+            "number": "5526",
+            "organization": 8,
+            "interval": 36,
+            "manufacturer": "",
+            "manufacture_date": "1982-10-10",
+            "status": 1,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "aisms.passport",
+        "fields": {
+            "measure": 2,
+            "number": "7723",
+            "organization": 2,
+            "interval": 36,
+            "manufacturer": "",
+            "manufacture_date": "1982-10-10",
+            "status": 1,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "aisms.passport",
+        "fields": {
+            "measure": 2,
+            "number": "2664А",
+            "organization": 12,
+            "interval": 36,
+            "manufacturer": "",
+            "manufacture_date": "1982-10-10",
+            "status": 1,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "aisms.passport",
+        "fields": {
+            "measure": 3,
+            "number": "5512412",
+            "organization": 3,
+            "interval": 12,
+            "manufacturer": "",
+            "manufacture_date": "1982-10-10",
+            "status": 1,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "aisms.passport",
+        "fields": {
+            "measure": 3,
+            "number": "6652367",
+            "organization": 3,
+            "interval": 12,
+            "manufacturer": "",
+            "manufacture_date": "1982-10-10",
+            "status": 1,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "aisms.passport",
+        "fields": {
+            "measure": 3,
+            "number": "2366612",
+            "organization": 3,
+            "interval": 12,
+            "manufacturer": "",
+            "manufacture_date": "1982-10-10",
+            "status": 1,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "aisms.passport",
+        "fields": {
+            "measure": 3,
+            "number": "4423",
+            "organization": 4,
+            "interval": 12,
+            "manufacturer": "",
+            "manufacture_date": "1982-10-10",
+            "status": 1,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "aisms.passport",
+        "fields": {
+            "measure": 4,
+            "number": "833",
+            "organization": 6,
+            "interval": 12,
+            "manufacturer": "",
+            "manufacture_date": "1982-10-10",
+            "status": 1,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "aisms.passport",
+        "fields": {
+            "measure": 4,
+            "number": "12551",
+            "organization": 9,
+            "interval": 12,
+            "manufacturer": "",
+            "manufacture_date": "1982-10-10",
+            "status": 1,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "aisms.passport",
+        "fields": {
+            "measure": 5,
+            "number": "6623",
+            "organization": 10,
+            "interval": 12,
+            "manufacturer": "",
+            "manufacture_date": "1982-10-10",
+            "status": 1,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "aisms.passport",
+        "fields": {
+            "measure": 5,
+            "number": "77344",
+            "organization": 10,
+            "interval": 12,
+            "manufacturer": "",
+            "manufacture_date": "1982-10-10",
+            "status": 1,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 13,
+        "model": "aisms.passport",
+        "fields": {
+            "measure": 6,
+            "number": "26621",
+            "organization": 15,
+            "interval": 12,
+            "manufacturer": "",
+            "manufacture_date": "1982-10-10",
+            "status": 1,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 14,
+        "model": "aisms.passport",
+        "fields": {
+            "measure": 7,
+            "number": "3326689",
+            "organization": 15,
+            "interval": 12,
+            "manufacturer": "",
+            "manufacture_date": "1982-10-10",
+            "status": 1,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 15,
+        "model": "aisms.passport",
+        "fields": {
+            "measure": 8,
+            "number": "2344",
+            "organization": 3,
+            "interval": 12,
+            "manufacturer": "",
+            "manufacture_date": "1982-10-10",
+            "status": 1,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 16,
+        "model": "aisms.passport",
+        "fields": {
+            "measure": 8,
+            "number": "6634",
+            "organization": 1,
+            "department": 1,
+            "interval": 12,
+            "manufacturer": "",
+            "manufacture_date": "1982-10-10",
+            "status": 1,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 17,
+        "model": "aisms.passport",
+        "fields": {
+            "measure": 8,
+            "number": "77564",
+            "organization": 1,
+            "department": 1,
+            "interval": 12,
+            "manufacturer": "",
+            "manufacture_date": "1982-10-10",
+            "status": 1,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 18,
+        "model": "aisms.passport",
+        "fields": {
+            "measure": 9,
+            "number": "2234",
+            "organization": 6,
+            "interval": 12,
+            "manufacturer": "",
+            "manufacture_date": "1982-10-10",
+            "status": 1,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 19,
+        "model": "aisms.passport",
+        "fields": {
+            "measure": 9,
+            "number": "123553",
+            "organization": 9,
+            "interval": 12,
+            "manufacturer": "",
+            "manufacture_date": "1982-10-10",
+            "status": 1,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 20,
+        "model": "aisms.passport",
+        "fields": {
+            "measure": 10,
+            "number": "31976",
+            "organization": 16,
+            "interval": 12,
+            "manufacturer": "",
+            "manufacture_date": "1982-10-10",
+            "status": 1,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 21,
+        "model": "aisms.passport",
+        "fields": {
+            "measure": 11,
+            "number": "44537",
+            "organization": 7,
+            "interval": 12,
+            "manufacturer": "",
+            "manufacture_date": "1982-10-10",
+            "status": 1,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 22,
+        "model": "aisms.passport",
+        "fields": {
+            "measure": 12,
+            "number": "223825",
+            "organization": 7,
+            "interval": 12,
+            "manufacturer": "",
+            "manufacture_date": "1982-10-10",
+            "status": 1,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 23,
+        "model": "aisms.passport",
+        "fields": {
+            "measure": 13,
+            "number": "442362",
+            "organization": 16,
+            "interval": 12,
+            "manufacturer": "",
+            "manufacture_date": "1982-10-10",
+            "status": 1,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 24,
+        "model": "aisms.passport",
+        "fields": {
+            "measure": 13,
+            "number": "44236",
+            "organization": 8,
+            "interval": 12,
+            "manufacturer": "",
+            "manufacture_date": "1982-10-10",
+            "status": 1,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 25,
+        "model": "aisms.passport",
+        "fields": {
+            "measure": 13,
+            "number": "34",
+            "organization": 9,
+            "interval": 12,
+            "manufacturer": "",
+            "manufacture_date": "1982-10-10",
+            "status": 1,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 26,
+        "model": "aisms.passport",
+        "fields": {
+            "measure": 14,
+            "number": "66345345",
+            "organization": 14,
+            "interval": 12,
+            "manufacturer": "",
+            "manufacture_date": "1982-10-10",
+            "status": 1,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 27,
+        "model": "aisms.passport",
+        "fields": {
+            "measure": 14,
+            "number": "33461",
+            "organization": 8,
+            "interval": 12,
+            "manufacturer": "",
+            "manufacture_date": "1982-10-10",
+            "status": 1,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 28,
+        "model": "aisms.passport",
+        "fields": {
+            "measure": 15,
+            "number": "22315",
+            "organization": 2,
+            "interval": 12,
+            "manufacturer": "",
+            "manufacture_date": "1982-10-10",
+            "status": 1,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 29,
+        "model": "aisms.passport",
+        "fields": {
+            "measure": 15,
+            "number": "98964",
+            "organization": 5,
+            "interval": 12,
+            "manufacturer": "",
+            "manufacture_date": "1982-10-10",
+            "status": 1,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 30,
+        "model": "aisms.passport",
+        "fields": {
+            "measure": 16,
+            "number": "55347",
+            "organization": 8,
+            "interval": 12,
+            "manufacturer": "",
+            "manufacture_date": "1982-10-10",
+            "status": 1,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 31,
+        "model": "aisms.passport",
+        "fields": {
+            "measure": 16,
+            "number": "44373",
+            "organization": 8,
+            "interval": 12,
+            "manufacturer": "",
+            "manufacture_date": "1982-10-10",
+            "status": 1,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 32,
+        "model": "aisms.passport",
+        "fields": {
+            "measure": 17,
+            "number": "344",
+            "organization": 4,
+            "interval": 12,
+            "manufacturer": "",
+            "manufacture_date": "1982-10-10",
+            "status": 1,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 33,
+        "model": "aisms.passport",
+        "fields": {
+            "measure": 15,
+            "number": "15",
+            "organization": 15,
+            "interval": 12,
+            "manufacturer": "",
+            "manufacture_date": "1982-10-10",
+            "status": 1,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 34,
+        "model": "aisms.passport",
+        "fields": {
+            "measure": 13,
+            "number": "13",
+            "organization": 13,
+            "interval": 12,
+            "manufacturer": "",
+            "manufacture_date": "1982-10-10",
+            "status": 1,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 35,
+        "model": "aisms.passport",
+        "fields": {
+            "measure": 11,
+            "number": "11",
+            "organization": 11,
+            "interval": 12,
+            "manufacturer": "",
+            "manufacture_date": "1982-10-10",
+            "status": 1,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 36,
+        "model": "aisms.passport",
+        "fields": {
+            "measure": 9,
+            "number": "9",
+            "organization": 9,
+            "interval": 12,
+            "manufacturer": "",
+            "manufacture_date": "1982-10-10",
+            "status": 1,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 37,
+        "model": "aisms.passport",
+        "fields": {
+            "measure": 7,
+            "number": "7",
+            "organization": 7,
+            "interval": 12,
+            "manufacturer": "",
+            "manufacture_date": "1982-10-10",
+            "status": 1,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 38,
+        "model": "aisms.passport",
+        "fields": {
+            "measure": 5,
+            "number": "5",
+            "organization": 5,
+            "interval": 12,
+            "manufacturer": "",
+            "manufacture_date": "1982-10-10",
+            "status": 1,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 39,
+        "model": "aisms.passport",
+        "fields": {
+            "measure": 3,
+            "number": "3",
+            "organization": 3,
+            "interval": 12,
+            "manufacturer": "",
+            "manufacture_date": "1982-10-10",
+            "status": 1,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 40,
+        "model": "aisms.passport",
+        "fields": {
+            "measure": 1,
+            "number": "1",
+            "organization": 1,
+            "interval": 12,
+            "manufacturer": "",
+            "manufacture_date": "1982-10-10",
+            "status": 1,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    }
+]

@@ -1,0 +1,22 @@
+{% extends 'models/_detail.html' %}
+
+{% block content %}
+    <dl>
+        {% if object.id %}<dt>Код организации</dt><dd>{{ object.id }}</dd>{% endif %}
+        {% if object.full_name %}<dt>Полное наименование</dt><dd>{{ object.full_name }}</dd>{% endif %}
+        <dt>{% if object.dir_position %}{{ object.dir_position }}{% else %}Руководитель{% endif %}</dt>
+            <dd>{{ object.dir_name }}</dd>
+        <dt>Адрес</dt><dd><address>{{ object.address|linebreaksbr }}</address></dd>
+
+        {% if object.department_set.all %}
+            <dt>Подразделения</dt>
+            <dd>
+                <ul>
+                {% for dep in object.department_set.all %}
+                    <li><a href="{{ dep.get_absolute_url }}">{{ dep }}</a></li>
+                {% endfor %}
+                </ul>
+            </dd>
+        {% endif %}
+    </dl>
+{% endblock %}

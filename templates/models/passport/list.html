@@ -1,0 +1,19 @@
+{% extends 'models/_list.html' %}
+
+{% block header %}Список средств измерений{% endblock %}
+
+{% block content %}
+    {% regroup object_list|dictsort:"organization.id" by organization as orgs %}
+    {% for org in orgs %}
+        <h2>{{ org.grouper }}</h2>
+        {% regroup org.list|dictsort:"department" by department as deps %}
+        {% for dep in deps %}
+            {% if dep.grouper %}<h3>{{ dep.grouper }}</h3>{% endif %}
+            <ul>
+            {% for i in dep.list %}
+                <li><a href="{{ i.get_absolute_url }}">{{ i.measure.name }} {{ i.measure.tipo }} № {{ i.number }}</a></li>
+            {% endfor %}
+            </ul>
+        {% endfor %}
+    {% endfor %}
+{% endblock %}

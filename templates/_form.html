@@ -1,0 +1,31 @@
+{% if form.non_field_errors %}
+<div class="alert">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>Внимание!</strong> {% for e in form.non_field_errors %}{{ e }}{% endfor %}
+</div>
+{% endif %}
+
+<form class="form-horizontal" method="{% if method %}{{ method }}{% else %}POST{% endif %}">
+    {% if not method or method == 'POST' %}{% csrf_token %}{% endif %}
+    {% for field in form %}
+    <div class="control-group{% if field.errors %} error{% endif %}">
+        <label class="control-label" for="{{ field.auto_id }}">
+            {{ field.label }}<br/>
+            {% if field.field.required %}<small class="muted">обязательное поле</small>{% endif %}
+        </label>
+        <div class="controls">
+            {{ field }}
+            {% if field.name in 'organization,document,measure,department' %}
+                <a href="/{{ field.name }}/add/" class="btn btn-mini"><i class="icon-plus"></i></a>
+            {% endif %}
+            <span class="help-inline">
+                {% for e in field.errors %}{{ e }}{% endfor %}
+            </span>
+        </div>
+    </div>
+    {% endfor %}
+    <div class="form-actions">
+        <button type="submit" class="btn btn-primary">Ok</button>
+        <button type="reset" class="btn">Очистить</button>
+    </div>
+</form>

@@ -1,0 +1,15 @@
+{% extends 'models/_list.html' %}
+
+{% block header %}Список типов средств измерений{% endblock %}
+
+{% block content %}
+    {% regroup object_list|dictsort:"area" by get_area_display as areas %}
+    {% for area in areas %}
+        <h3>{{ area.grouper }}</h3>
+        <ul>
+        {% for measure in area.list %}
+            <li><a href="{{ measure.get_absolute_url }}">{{ measure }}</a></li>
+        {% endfor %}
+        </ul>
+    {% endfor %}
+{% endblock %}

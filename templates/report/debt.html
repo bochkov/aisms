@@ -1,0 +1,19 @@
+{% extends 'report/_report.html' %}
+
+{% block header %}Непредставленные СИ{% endblock %}
+
+{% block content %}
+    {% regroup object_list by organization as orgs %}
+    {% for org in orgs %}
+        <h2>{{ org.grouper }}</h2>
+        {% regroup org.list by department as deps %}
+        {% for dep in deps %}
+            <h3>{{ dep.grouper }}</h3>
+            <ul>
+                {% for i in dep.list %}
+                    <li><a href="{{ i.get_absolute_url }}">{{ i.measure.name }} {{ i.measure.tipo }} № {{ i.number }}</a></li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    {% endfor %}
+{% endblock %}

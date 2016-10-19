@@ -1,0 +1,18 @@
+{% extends 'models/_add.html' %}
+
+{% block header %}Добавить средство измерений{% endblock %}
+
+{% block custom_js %}
+    <script>
+        var measure = $("#id_measure");
+        measure.change(function(){
+            jQuery.getJSON(
+                    '/interval_by_type/',
+                    {'measure_id': measure.find(":selected").val()},
+                    function(data){
+                        $("#id_interval").val(data['interval']);
+                    }
+            );
+        });
+    </script>
+{% endblock %}

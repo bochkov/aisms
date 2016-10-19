@@ -1,0 +1,31 @@
+{% extends 'models/_detail.html' %}
+
+{% block content %}
+    <div class="row-fluid">
+        <div class="span4">
+            {% for i in object.image_set.all %}
+                <img src="{{ MEDIA_URL }}{{ i.photo }}"/>
+            {% endfor %}
+        </div>
+        <div class="span8">
+            <dl>
+                <dt>Наименование</dt><dd>{{ object.name }}</dd>
+                <dt>Тип</dt><dd>{{ object.tipo }}</dd>
+                <dt>Область измерений</dt><dd>{{ object.get_area_display }}</dd>
+                {% if object.kt %}<dt>Класс точности</dt><dd>{{ object.kt|safe }}</dd>{% endif %}
+                {% if object.features %}<dt>Характеристики</dt><dd>{{ object.features|safe|linebreaks }}</dd>{% endif %}
+                <dt>Межповерочный интервал</dt><dd>{{ object.get_interval_display }} мес</dd>
+                {% if object.document.all %}
+                <dt>Нормативные документы</dt>
+                <dd>
+                    <ul>
+                    {% for i in object.document.all %}
+                        <li><a href="{{ i.get_absolute_url }}">{{ i }}</a></li>
+                    {% endfor %}
+                    </ul>
+                </dd>
+                {% endif %}
+            </dl>
+        </div>
+    </div>
+{% endblock %}

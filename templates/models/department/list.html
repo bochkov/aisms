@@ -1,0 +1,15 @@
+{% extends 'models/_list.html' %}
+
+{% block header %}Список подразделений{% endblock %}
+
+{% block content %}
+    {% regroup object_list by organization as organizations %}
+    {% for organization in organizations %}
+        <h4>{{ organization.grouper }}</h4>
+        <ul>
+        {% for department in organization.list %}
+            <li><a href="{{ department.get_absolute_url }}">{{ department }}</a></li>
+        {% endfor %}
+        </ul>
+    {% endfor %}
+{% endblock %}

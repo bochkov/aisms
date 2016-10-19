@@ -1,0 +1,26 @@
+{% extends 'models/_detail.html' %}
+
+{% block header %}
+    {{ object.code }}
+{% endblock %}
+
+{% block content %}
+    {% if object.doc %}<a href="{{ MEDIA_URL }}{{ object.doc }}" class="btn btn-success pull-right">Посмотреть</a>{% endif %}
+    <h2>{{ object.name }}</h2>
+
+    <dl>
+        <dt>Обозначение</dt><dd>{{ object.code }}</dd>
+        <dt>Название</dt><dd>{{ object.name }}</dd>
+        {% if object.notes %}<dt>Примечание</dt><dd>{{ object.notes }}</dd>{% endif %}
+        {% if object.measure_set.all %}
+        <dt>Связанные СИ</dt>
+        <dd>
+        <ul>
+            {% for i in object.measure_set.all %}
+            <li><a href="{{ i.get_absolute_url }}">{{ i }}</a></li>
+            {% endfor %}
+        </ul>
+        </dd>
+        {% endif %}
+    </dl>
+{% endblock %}

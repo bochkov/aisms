@@ -1,0 +1,56 @@
+[
+    {
+        "pk": 1,
+        "model": "aisms.image",
+        "fields": {
+            "measure": 1,
+            "photo": "photos/measure/mp6.jpg",
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "aisms.image",
+        "fields": {
+            "measure": 3,
+            "photo": "photos/measure/mo11202.jpg",
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "aisms.image",
+        "fields": {
+            "measure": 8,
+            "photo": "photos/measure/irt-4.jpg",
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "aisms.image",
+        "fields": {
+            "measure": 10,
+            "photo": "photos/measure/ach-8321.jpg",
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "aisms.image",
+        "fields": {
+            "measure": 11,
+            "photo": "photos/measure/ch3-641.jpg",
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "aisms.image",
+        "fields": {
+            "measure": 11,
+            "photo": "photos/measure/CH3-642.jpg",
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    }
+]

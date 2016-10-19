@@ -1,0 +1,27 @@
+{% extends 'report/_report.html' %}
+
+{% block header %}Готовность СИ{% endblock %}
+
+{% block content %}
+    {% if object_list %}
+    <table class="table table-striped table-bordered">
+        <tr>
+            <th>№ п/п</th>
+            <th>Средство измерений</th>
+            <th>Дата выполнения работы</th>
+            <th>Заказчик</th>
+        </tr>
+    {% for i in object_list %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ i.measure }} № {{ i.number }}</td>
+            {% if i.work_set.latest %}
+                <td>{{ i.work_set.latest.date|date:"d.m.Y" }}
+                    <small>{{ i.work_set.latest.date|date:"H:i" }}</small></td>
+            {% endif %}
+            <td>{{ i.owner }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+    {% endif %}
+{% endblock %}

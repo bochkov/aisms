@@ -1,0 +1,28 @@
+{% extends '_base.html' %}
+
+{% block header %}
+    Поиск по номеру № {{ number }}
+{% endblock %}
+
+{% block content %}
+    {% if object_list %}
+    <table class="table table-striped">
+        <tr>
+            <th>№ п/п</th>
+            <th>Средство измерений</th>
+            <th>Статус</th>
+            <th>Принадлежит</th>
+        </tr>
+    {% for obj in object_list %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td><a href="{{ obj.get_absolute_url }}">{{ obj.measure }} № {{ obj.number }}</a></td>
+            <td>{{ obj.get_status_display }}</td>
+            <td>{{ obj.owner }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+    {% else %}
+        Ничего не найдено
+    {% endif %}
+{% endblock %}

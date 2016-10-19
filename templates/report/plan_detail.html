@@ -1,0 +1,39 @@
+{% extends 'report/_report.html' %}
+
+{% block header %}
+    График поверки {{ organization }}
+{% endblock %}
+
+{% block content %}
+    <a href="{% url 'report_plan' %}" class="btn btn-small"><i class="icon-arrow-left"></i> Назад</a>
+    <a href="{% url 'print_plan' organization=organization.id %}" class="btn btn-small btn-info">
+        <i class="icon-print icon-white"></i> в ODT</a>
+{% if object_list %}
+    {% regroup object_list by measure.get_area_display as areas %}
+    {% for area in areas %}
+        <h3>{{ area.grouper }}</h3>
+        <table class="table table-bordered table-striped table-condensed">
+            <tr>
+                <th>№ п/п</th>
+                <th>Наименование, тип СИ, зав. номер</th>
+                <th>Метрологические характеристики</th>
+                <th>Периодичность поверки, мес.</th>
+                <th>Дата последней поверки</th>
+                <th>Место проведения поверки</th>
+                <th>Дата плановой поверки</th>
+            </tr>
+        {% for obj in area.list %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ obj.measure }}<br/>№ {{ obj.number }}</td>
+                <td>{{ obj.measure.features|safe|linebreaksbr }}<br/>{{ obj.measure.kt|safe }}</td>
+                <td>{{ obj.interval }}</td>
+                <td>{{ obj.work_set.latest.date|date:"d.m.Y" }}</td>
+                <td>{{ obj.work_set.latest.workplace }}</td>
+                <td>{{ obj.next_date|date:"F Y" }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+    {% endfor %}
+{% endif %}
+{% endblock %}

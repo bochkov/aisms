@@ -1,0 +1,48 @@
+{% extends 'report/_report.html' %}
+
+{% block header %}Журнал приемки СИ{% endblock %}
+
+{% block content %}
+    <ul class="nav nav-pills">
+        <li><a href="?type=">Все</a></li>
+        <li><a href="?type=current">Текущие</a></li>
+        <li><a href="?type=archive">Архив</a></li>
+    </ul>
+
+    {% if object_list %}
+    <table class="table table-bordered table-striped table-condensed">
+        <tr>
+            <th>№ п/п</th>
+            <th>Средство измерений</th>
+            <th>Принадлежит</th>
+            <th>Дата приема</th>
+            <th>Сдал</th>
+            <th>Принял</th>
+            <th>Дата выдачи</th>
+            <th>Выдал</th>
+            <th>Получил</th>
+        </tr>
+        {% for obj in object_list %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td><a href="{{ obj.passport.get_absolute_url }}">{{ obj.passport }}</a></td>
+            <td>{{ obj.passport.owner }}</td>
+            <td>{{ obj.date|date:"d.m.Y" }} <small>{{ obj.date|date:"H:i" }}</small></td>
+            <td>{{ obj.passed }}</td>
+            <td>{{ obj.accepted }}</td>
+            <td>{{ obj.journal_out.date|date:"d.m.Y" }} <small>{{ obj.journal_out.date|date:"H:i" }}</small></td>
+            <td>{{ obj.journal_out.passed }}</td>
+            <td>{{ obj.journal_out.accepted }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+{% endblock %}
+
+{% block custom_js %}
+    <script>
+    $(function(){
+        $('a[href="?type={{ type }}"]').parent().addClass('active');
+    })
+    </script>
+{% endblock %}

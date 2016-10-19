@@ -1,0 +1,48 @@
+{% extends 'models/_detail.html' %}
+
+{% block header %}
+    {{ object }}
+    {% if object.is_debt %}
+        <div class="label label-important">Просрочено</div>
+    {% elif object.status == 2 %}
+        <div class="label label-info">{{ object.get_status_display }}</div>
+    {% elif object.status == 3 %}
+        <div class="label label-warning">{{ object.get_status_display }}</div>
+    {% elif object.status == 4 %}
+        <div class="label label-inverse">{{ object.get_status_display }}</div>
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <div class="row-fluid">
+        <div class="span4">
+            {% for i in object.measure.image_set.all %}
+                <img src='{{ MEDIA_URL }}{{ i.photo }}'>
+            {% endfor %}
+        </div>
+        <div class="span8">
+            <dl>
+                <dt>Наименование и тип</dt><dd><a href="{{ object.measure.get_absolute_url }}">{{ object.measure }}</a></dd>
+                <dt>Заводской номер</dt><dd>{{ object.number }}</dd>
+                <dt>Принадлежит</dt><dd>{{ object.owner }}</dd>
+                <dt>Межповерочный интервал</dt><dd>{{ object.interval }} мес</dd>
+                {% if object.manufacturer %}<dt>Завод-изготовитель</dt><dd>{{ object.manufacturer }}</dd>{% endif %}
+                {% if object.manufacture_date %}<dt>Дата изготовления</dt><dd>{{ object.manufacture_date }}</dd>{% endif %}
+            </dl>
+        </div>
+        <table class="table table-striped">
+        {% for obj in object.work_set.all %}
+            <tr class="{% if obj.result == False and obj.tipo == 2 %}error{% elif obj.result %}success{% else %}warning{% endif %}">
+                <td>{{ forloop.counter }}</td>
+                <td>{{ obj.date|date:"d.m.Y" }} <small>{{ obj.date|date:"H:i" }}</small></td>
+                <td>{{ obj.get_tipo_display }}</td>
+                <td>{{ obj.workplace }}</td>
+                <td>{{ obj.performer }}</td>
+                <td>{% if obj.document %}<a href="{{ MEDIA_URL }}{{ obj.document }}">{{ obj.result|yesno:"Годен,Брак" }}</a>
+                    {% else %}{{ obj.result|yesno:"Годен,Брак" }}{% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+        </table>
+    </div>
+{% endblock %}

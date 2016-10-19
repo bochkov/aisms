@@ -1,0 +1,223 @@
+[
+    {
+        "pk": 1,
+        "model": "aisms.measure",
+        "fields": {
+            "name": "Манометр грузопоршневой",
+            "tipo": "МП-6",
+            "area": 30,
+            "kt": "0,05; 0,02",
+            "features": "40..600 кПа",
+            "interval": 36,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "aisms.measure",
+        "fields": {
+            "name": "Манометр грузопоршневой",
+            "tipo": "МП-600",
+            "area": 30,
+            "kt": "0,05; 0,02; 0,01",
+            "features": "1..60 МПа",
+            "interval": 36,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "aisms.measure",
+        "fields": {
+            "name": "Манометр образцовый",
+            "tipo": "МО11202",
+            "area": 30,
+            "kt": "0,4",
+            "features": "0..1,6 кгс/см<sup>2</sup>",
+            "interval": 12,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "aisms.measure",
+        "fields": {
+            "name": "Вакууметр технический",
+            "tipo": "ВП4-У",
+            "area": 30,
+            "kt": "1,5; 1",
+            "features": "-1..0 кгс/см<sup>2</sup>",
+            "interval": 12,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "aisms.measure",
+        "fields": {
+            "name": "Микрометр",
+            "tipo": "МТИ",
+            "area": 27,
+            "kt": "ПГ &plusmn; 0,004",
+            "features": "5..105 мм; ЦД 0,01 мм",
+            "interval": 12,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "aisms.measure",
+        "fields": {
+            "name": "Штангенциркуль",
+            "tipo": "Mitutoyo 551",
+            "area": 27,
+            "kt": "",
+            "features": "0..1000 мм; ЦД 0,01 мм",
+            "interval": 12,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "aisms.measure",
+        "fields": {
+            "name": "Нутромер",
+            "tipo": "НИ 6-10",
+            "area": 27,
+            "kt": "ЦД 0,01 мм",
+            "features": "6..10 мм",
+            "interval": 12,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "aisms.measure",
+        "fields": {
+            "name": "Измеритель-регулятор температуры",
+            "tipo": "ИРТ-4",
+            "area": 32,
+            "kt": "0,25",
+            "features": "",
+            "interval": 12,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "aisms.measure",
+        "fields": {
+            "name": "Преобразователь температуры измерительный",
+            "tipo": "ЦПТ-01",
+            "area": 32,
+            "kt": "ПГ &plusmn; 0.5 &deg;C",
+            "features": "",
+            "interval": 12,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "aisms.measure",
+        "fields": {
+            "name": "Частотомер",
+            "tipo": "АСН-8321",
+            "area": 33,
+            "kt": "",
+            "features": "0,1 Гц .. 200 МГц; 10 нс .. 10 с",
+            "interval": 12,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "aisms.measure",
+        "fields": {
+            "name": "Частотомер электронно-счетный",
+            "tipo": "Ч3-64/1",
+            "area": 33,
+            "kt": "",
+            "features": "0,005 Гц .. 1500 МГц; 1 &middot; 10<sup>-8</sup> .. 2 &middot; 10<sup>4</sup> c",
+            "interval": 12,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "aisms.measure",
+        "fields": {
+            "name": "Осциллограф",
+            "tipo": "MOS-620",
+            "area": 35,
+            "kt": "",
+            "features": "20 МГц",
+            "interval": 12,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 13,
+        "model": "aisms.measure",
+        "fields": {
+            "name": "Осциллограф цифровой",
+            "tipo": "TDS 2012 B",
+            "area": 35,
+            "kt": "",
+            "features": "100 МГц",
+            "interval": 12,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 14,
+        "model": "aisms.measure",
+        "fields": {
+            "name": "Мультиметр",
+            "tipo": "APPA 105N",
+            "area": 34,
+            "kt": "",
+            "features": "U= 400 мВ .. 1000 В, U~ 400 мВ .. 750 В\nI= 40 мА .. 10 А, I~ 40 мА .. 10 А\nR 400 Ом .. 40 МОм",
+            "interval": 12,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 15,
+        "model": "aisms.measure",
+        "fields": {
+            "name": "Мультиметр",
+            "tipo": "APPA 62T",
+            "area": 34,
+            "kt": "",
+            "features": "U= 0.1 мВ .. 1000 В, U~ 0.1 мВ .. 750 В\nI~= 1 мА .. 10 А\nR 0,1 Ом .. 20 МОм",
+            "interval": 12,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 16,
+        "model": "aisms.measure",
+        "fields": {
+            "name": "Амперметр",
+            "tipo": "Д5078",
+            "area": 34,
+            "kt": "0.2",
+            "features": "0,5 А; 1 А",
+            "interval": 12,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    },
+    {
+        "pk": 17,
+        "model": "aisms.measure",
+        "fields": {
+            "name": "Киловольтметр",
+            "tipo": "С511",
+            "area": 34,
+            "kt": "0.5",
+            "features": "U~ 3000 В",
+            "interval": 12,
+            "timestamp": "2014-01-14T04:00:00.000Z"
+        }
+    }
+]
